@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 45% 97%;
+    --foreground: 188 38% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 188 38% 12%;
+    --muted: 182 28% 92%;
+    --muted-foreground: 188 14% 42%;
+    --primary: 184 88% 22%;
+    --primary-foreground: 0 0% 100%;
+    --border: 181 26% 84%;
+    --input: 181 26% 84%;
+    --ring: 184 88% 24%;
+  }
+
+  .dark {
+    --background: 190 36% 8%;
+    --foreground: 180 24% 94%;
+    --card: 189 34% 12%;
+    --card-foreground: 180 24% 94%;
+    --muted: 188 30% 18%;
+    --muted-foreground: 181 18% 74%;
+    --primary: 177 65% 64%;
+    --primary-foreground: 190 44% 9%;
+    --border: 188 26% 25%;
+    --input: 188 26% 25%;
+    --ring: 177 65% 64%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at 8% 0%, rgba(13, 148, 136, 0.16), transparent 32%),
+      radial-gradient(circle at 100% 6%, rgba(20, 184, 166, 0.14), transparent 34%),
+      radial-gradient(circle at 42% 100%, rgba(240, 253, 250, 0.88), transparent 44%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(236, 253, 245, 0.9));
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply border border-teal-100/90 bg-white/90 shadow-sm backdrop-blur-xl dark:border-teal-900/70 dark:bg-slate-950/80;
+  }
+
+  .paper-card {
+    @apply border border-teal-100 bg-white shadow-sm dark:border-teal-900 dark:bg-slate-950;
+  }
+
+  .metric-gradient {
+    background: linear-gradient(135deg, #064e3b, #0f766e);
+  }
+
+  .cyan-gradient {
+    background: linear-gradient(135deg, #0f766e, #22d3ee);
+  }
+
+  .amber-gradient {
+    background: linear-gradient(135deg, #115e59, #14b8a6);
+  }
+
+  .rose-gradient {
+    background: linear-gradient(135deg, #0f172a, #0d9488);
+  }
+
+  .graph-paper {
+    background-image:
+      linear-gradient(rgba(15, 118, 110, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 118, 110, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 118, 110, 0.42);
+  border-radius: 999px;
+}
+
+@layer base {
+  :root {
+    --chart-bg: #ffffff;
+    --chart-text: #0f2f35;
+    --chart-muted: #3f666b;
+    --chart-grid: #ccfbf1;
+    --chart-border: #99f6e4;
+    --chart-tooltip-bg: #ffffff;
+    --chart-primary: #0f766e;
+    --chart-primary-soft: #ccfbf1;
+    --chart-secondary: #0891b2;
+    --chart-accent: #14b8a6;
+    --chart-accent-soft: #e0f2fe;
+    --chart-median: #042f2e;
+  }
+
+  .dark {
+    --chart-bg: #082f35;
+    --chart-text: #ecfeff;
+    --chart-muted: #a7f3d0;
+    --chart-grid: #0f766e;
+    --chart-border: #14b8a6;
+    --chart-tooltip-bg: #0f172a;
+    --chart-primary: #5eead4;
+    --chart-primary-soft: #115e59;
+    --chart-secondary: #67e8f9;
+    --chart-accent: #99f6e4;
+    --chart-accent-soft: #164e63;
+    --chart-median: #ffffff;
+  }
+
+  .chart-svg {
+    background: var(--chart-bg);
+    color: var(--chart-text);
+  }
+
+  .recharts-wrapper text,
+  .recharts-cartesian-axis-tick-value,
+  .recharts-label {
+    fill: var(--chart-muted);
+  }
+
+  .recharts-tooltip-wrapper {
+    color: var(--chart-text);
+  }
+}
+
+@layer base {
+  .dark body {
+    background-image:
+      radial-gradient(circle at 8% 0%, rgba(45, 212, 191, 0.12), transparent 34%),
+      radial-gradient(circle at 100% 8%, rgba(8, 145, 178, 0.12), transparent 34%),
+      radial-gradient(circle at 40% 100%, rgba(15, 118, 110, 0.18), transparent 40%),
+      linear-gradient(180deg, rgba(8, 47, 53, 0.98), rgba(2, 6, 23, 0.96));
+  }
+}
